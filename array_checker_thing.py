@@ -3,10 +3,8 @@
 # 21/09/22
 
 
-from secrets import choice
+# from secrets import choice
 
-
-average = 0 
 
 def validation():
     choice = 0
@@ -33,17 +31,20 @@ def numbers(output):
 
 def display(num_list, total):
 
+    average = 0
     average = (total/len(num_list))
-    print(average)
+    print(f'The average is {average}')
     
     largest_number = num_list[0]
     for x in num_list:
         if x > largest_number:
             largest_number = x
-            print(largest_number)
+    
+    print(f'The largest number is {largest_number}')
 
+    
     midpoint = (total + 1)/2
-    print(midpoint)
+    print(f'The total midpoint is {midpoint}')
 
 output = validation()
 num_list, total = numbers(output)
@@ -57,6 +58,7 @@ display(num_list, total)
 # numbers_list(output)
 # print(numbers_list)
   #  return numbers_list
+
  # A program that identifies if a number is even or odd
 
 def identifier():

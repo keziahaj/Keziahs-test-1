@@ -3,9 +3,13 @@
 # 21/09/22
 
 
+from secrets import choice
+
+
 average = 0 
 
 def validation():
+    choice = 0
     choice = int(input("How many numbers would you like to input? Please enter an amount above 2."))
     while choice < 3:
         print("Invalid input.")
@@ -13,23 +17,23 @@ def validation():
     return choice
   
 
-def numbers(choice):
+def numbers(output):
     num_list = []
-    for x in range(choice):
-        inpt = input(f" Enter number {x+1}")
+    total = 0
+    for x in range(output):
+        inpt = int(input(f" Enter number {x+1}"))
         num_list.append(inpt)
     print(num_list)
+    
+    total = sum(num_list)
+    print(f'The total is {total}')
+
+    return num_list, total 
 
 
-def sum(num_list):
-    sum = 0
-    for x in range(0,len(num_list)):
-        sum = sum + num_list[x]
-        print("Sum of all your numbers.")
+def display(num_list, total):
 
-def display(sum, num_list):
-
-    average = (sum/len(num_list))
+    average = (total/len(num_list))
     print(average)
     
     largest_number = num_list[0]
@@ -38,20 +42,17 @@ def display(sum, num_list):
             largest_number = x
             print(largest_number)
 
-    midpoint = (sum + 1)/2
+    midpoint = (total + 1)/2
     print(midpoint)
 
 output = validation()
-numbers(choice)
-print(validation())
-sum(num_list)
+num_list, total = numbers(output)
+display(num_list, total)
 
 
+   
 
-
-
-
-        
+    
 # numbers_list = list(numbers)
 # numbers_list(output)
 # print(numbers_list)
@@ -67,6 +68,33 @@ def identifier():
     else:
         print(f"{number1} is an odd number")
 
+identifier()
+
+# function that asks for a person name and separates the name into letters in a list
+# learn the common methods used in a list
+
+def name():
+    name = input(f'What is your name?')
+    list = []
+
+    for x in name:
+        list.append(x)
+
+    print(list)
+
+name()
+
+# create a program that identifies if a number is odd or even (same as the one, two above)
+
+def num():
+    
+    num = int(input("Enter a number"))
+    if (num % 2) == 0:
+        print(f'{num} is an even number.')
+    else:
+        print(f'{num} is an odd number.')
+
+num()
 
 
 

@@ -8,7 +8,6 @@
 
 def validation():
     choice = 0
-    choice = int(input("How many numbers would you like to input? Please enter an amount above 2."))
     while choice < 3:
         print("Invalid input.")
         choice = int(input("How many numbers would you like to input? Please enter an amount above 2."))
@@ -21,7 +20,6 @@ def numbers(output):
     for x in range(output):
         inpt = int(input(f" Enter number {x+1}"))
         num_list.append(inpt)
-    print(num_list)
     
     total = sum(num_list)
     print(f'The total is {total}')
@@ -33,7 +31,7 @@ def display(num_list, total):
 
     average = 0
     average = (total/len(num_list))
-    print(f'The average is {average}')
+    print(f'The average is {round(average, 2)}')
     
     largest_number = num_list[0]
     for x in num_list:
@@ -43,7 +41,7 @@ def display(num_list, total):
     print(f'The largest number is {largest_number}')
 
     
-    midpoint = (total + 1)/2
+    midpoint = (total)/2
     print(f'The total midpoint is {midpoint}')
 
 output = validation()

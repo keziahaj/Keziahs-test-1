@@ -13,5 +13,27 @@ def array():
     for x in word_two:
         lst2.append(x)
 
+    print(lst1)
+    print(lst2)
+
+    count = 0
+
+    for x in lst1:
+        for z in lst2:
+            if x==z:
+                count = count+1
+                
+    if count==len(lst1):
+        print('Strings are anagrams of each other')
+    else:
+        print('Strings are not anagrams of each other')
+    
+
+
+output = array()
+
+
+
+
     
 
